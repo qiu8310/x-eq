@@ -1,0 +1,47 @@
+{
+  "name": "x-eq",
+  "description": "x Element Query.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/qiu8310/x-eq",
+  "bugs": "https://github.com/qiu8310/x-eq/issues",
+  "license": "MIT",
+  "main": "build/x-eq.js",
+  "author": {
+    "name": "Zhonglei Qiu",
+    "email": "qiuzhongleiabc@126.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiu8310/x-eq"
+  },
+  "keywords": [
+    "x-eq",
+    "Element Query",
+    "xeq",
+    "eq"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.5.8",
+    "coveralls": "^2.11.1",
+    "gulp": "^3.8.8",
+    "gulp-babel": "^5.1.0",
+    "gulp-istanbul": "^0.8.1",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jshint": "^1.9.4",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "isparta": "^3.0.3",
+    "jshint-stylish": "^1.0.1",
+    "should": "^6.0.1",
+    "uglify-js": "^2.4.24"
+  },
+  "scripts": {
+    "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "babel": "babel src/ --out-dir build --watch",
+    "mocha": "mocha --compilers js:babel/register",
+    "build": "gulp build && browserify build/x-eq.js -o dist/x-eq.js && node tool.js",
+    "test": "gulp test"
+  }
+}
