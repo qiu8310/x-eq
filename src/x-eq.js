@@ -23,7 +23,9 @@ function setupElement(element, attributes) {
   for (key in attributes) {
     if (attributes.hasOwnProperty(key)) {
       let attr = attributes[key];
-      attr.numberValue = utils.convertToPx(element, attr.value);
+      if (attr.value !== true) {
+        attr.numberValue = utils.convertToPx(element, attr.value);
+      }
 
       if (installs[key](element, attr)) {
         utils.addAttribute(element, key, attr.value);

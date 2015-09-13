@@ -37,7 +37,9 @@ function setupElement(element, attributes) {
   for (key in attributes) {
     if (attributes.hasOwnProperty(key)) {
       var attr = attributes[key];
-      attr.numberValue = _utilsJs2['default'].convertToPx(element, attr.value);
+      if (attr.value !== true) {
+        attr.numberValue = _utilsJs2['default'].convertToPx(element, attr.value);
+      }
 
       if (installs[key](element, attr)) {
         _utilsJs2['default'].addAttribute(element, key, attr.value);

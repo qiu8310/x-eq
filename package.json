@@ -41,7 +41,7 @@
     "coveralls": "gulp test && cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "babel": "babel src/ --out-dir build --watch",
     "mocha": "mocha --compilers js:babel/register",
-    "build": "gulp build && browserify build/x-eq.js -o dist/x-eq.js && node tool.js",
+    "build": "gulp build && browserify build/x-eq.js -s xEQ -o dist/x-eq.js && node tool.js",
     "test": "gulp test"
   }
 }
