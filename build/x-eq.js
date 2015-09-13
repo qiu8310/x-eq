@@ -22,6 +22,7 @@ var _utilsJs = require('./utils.js');
 var _utilsJs2 = _interopRequireDefault(_utilsJs);
 
 var installs = {},
+    lastRunKeys = [],
     inited = undefined,
     query = undefined,
     extractedData = [];
@@ -91,26 +92,26 @@ function init() {
   run();
 }
 
-function _clean() {
-  var keys = Object.keys(installs);
-  if (keys.length > 0) {
-    var elements = query('[' + keys.join('], [') + ']');
+function clean() {
+  if (lastRunKeys.length > 0) {
+    var elements = query('[' + lastRunKeys.join('], [') + ']');
     for (var i = 0; i < elements.length; i++) {
-      for (var j = 0; j < keys.length; j++) {
-        elements[i].removeAttribute(keys[j]);
+      for (var j = 0; j < lastRunKeys.length; j++) {
+        elements[i].removeAttribute(lastRunKeys[j]);
       }
     }
   }
 }
 
 function run() {
-  _clean(); // 清除上次设置的所有属性，因为用户可能删除或安装了新的 key
+  clean(); // 清除上次设置的所有属性，因为用户可能删除或安装了新的 key
   extractedData.length = 0;
 
   for (var i = 0; i < document.styleSheets.length; i++) {
     processStyleSheet(document.styleSheets[i]);
   }
 
+  lastRunKeys = Object.keys(installs);
   refresh();
 }
 

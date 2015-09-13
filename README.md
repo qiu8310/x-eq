@@ -1,10 +1,12 @@
 # x-eq
 [![NPM version](https://badge.fury.io/js/x-eq.svg)](https://npmjs.org/package/x-eq)
 [![GitHub version][git-tag-image]][project-url]
+<!--
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][daviddm-url]][daviddm-image]
 [![Code Climate][climate-image]][climate-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
+-->
 
 x Element Query.
 
@@ -37,6 +39,11 @@ div[max-width~=600px] {
   /* ... */
 }
 ```
+
+## Example
+
+* [Basic](./examples/basic.html)
+* [Custom](./examples/custom.html)
 
 
 ## Notice

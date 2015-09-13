@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <script>var noAutoRunXEQ = true;</script>
+  <script src="../dist/x-eq.js"></script>
+
+  <style>
+    #test {
+      width: 100%;
+      background: lightblue;
+    }
+    #test[max-width ~= "700px"][min-height~="400px"] {
+      background: green;
+    }
+    #test[max-width~="500px"][min-height~="400px"] {
+      background: red;
+    }
+
+    .box {
+      margin: 10px auto;
+      width: 200px;
+      height: 100px;
+      background-color: lightgreen;
+      transition: all .5s;
+    }
+    @media (max-width: 600px) {
+      .inner.too-big {
+        width: 100%;
+        height: 201px;
+      }
+    }
+    .box[overflow] {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+<div id="test">
+  <div class="box">
+    <div class="inner too-big"></div>
+  </div>
+  <div class="box">
+    <div class="inner"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  xEQ.uninstall('max-width');
+  xEQ.install('overflow', function (el, attr) {
+    var children = el.children, c;
+    for (var i = 0; i < children.length; i++) {
+      c = children[i];
+      if (c.offsetHeight > el.clientHeight || c.offsetWidth > el.clientWidth) return true;
+    }
+    return false;
+  });
+  xEQ.run();
+
+
+
+</script>
+</body>
+</html>

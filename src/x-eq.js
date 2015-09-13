@@ -11,7 +11,7 @@
 
 import utils from './utils.js';
 
-let installs = {}, inited, query, extractedData = [];
+let installs = {}, lastRunKeys = [], inited, query, extractedData = [];
 
 if (document.querySelectorAll) query = (selector) => document.querySelectorAll(selector);
 if (!query && 'undefined' !== typeof jQuery) query = jQuery;
@@ -75,26 +75,26 @@ function init() {
   run();
 }
 
-function _clean() {
-  let keys = Object.keys(installs);
-  if (keys.length > 0) {
-    let elements = query('[' + keys.join('], [') + ']');
+function clean() {
+  if (lastRunKeys.length > 0) {
+    let elements = query('[' + lastRunKeys.join('], [') + ']');
     for (let i = 0; i < elements.length; i++) {
-      for (let j = 0; j < keys.length; j++) {
-        elements[i].removeAttribute(keys[j]);
+      for (let j = 0; j < lastRunKeys.length; j++) {
+        elements[i].removeAttribute(lastRunKeys[j]);
       }
     }
   }
 }
 
 function run() {
-  _clean(); // 清除上次设置的所有属性，因为用户可能删除或安装了新的 key
+  clean(); // 清除上次设置的所有属性，因为用户可能删除或安装了新的 key
   extractedData.length = 0;
 
   for (let i = 0; i < document.styleSheets.length; i++) {
     processStyleSheet(document.styleSheets[i]);
   }
 
+  lastRunKeys = Object.keys(installs);
   refresh();
 }
 
