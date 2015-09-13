@@ -64,13 +64,13 @@ function processStyleSheet(styleSheet) {
     var ownerNode = styleSheet.ownerNode || styleSheet.owningElement;
     if (ownerNode.getAttribute('data-xeq-bypass') === null) {
 
-      var i = undefined,
+      var _i = undefined,
           j = undefined,
           rule = undefined,
           mediaRules = undefined;
 
-      for (i = 0; i < rules.length; i++) {
-        rule = rules[i];
+      for (_i = 0; _i < rules.length; _i++) {
+        rule = rules[_i];
 
         if (rule.type === 1) {
           processSelector(rule.selectorText);
@@ -94,10 +94,21 @@ function init() {
 
 function clean() {
   if (lastRunKeys.length > 0) {
+    var currents = Object.keys(installs),
+        needClean = false;
+    for (var k = 0; k < lastRunKeys.length; k++) {
+      if (currents.indexOf(lastRunKeys[i]) < 0) {
+        needClean = true;
+        break;
+      }
+    }
+
+    if (!needClean) return false;
+
     var elements = query('[' + lastRunKeys.join('], [') + ']');
-    for (var i = 0; i < elements.length; i++) {
+    for (var _i2 = 0; _i2 < elements.length; _i2++) {
       for (var j = 0; j < lastRunKeys.length; j++) {
-        elements[i].removeAttribute(lastRunKeys[j]);
+        elements[_i2].removeAttribute(lastRunKeys[j]);
       }
     }
   }
@@ -107,8 +118,8 @@ function run() {
   clean(); // 清除上次设置的所有属性，因为用户可能删除或安装了新的 key
   extractedData.length = 0;
 
-  for (var i = 0; i < document.styleSheets.length; i++) {
-    processStyleSheet(document.styleSheets[i]);
+  for (var _i3 = 0; _i3 < document.styleSheets.length; _i3++) {
+    processStyleSheet(document.styleSheets[_i3]);
   }
 
   lastRunKeys = Object.keys(installs);
@@ -116,10 +127,10 @@ function run() {
 }
 
 function refresh() {
-  for (var i = 0; i < extractedData.length; i++) {
-    var _extractedData$i = extractedData[i];
-    var selector = _extractedData$i.selector;
-    var attributes = _extractedData$i.attributes;
+  for (var _i4 = 0; _i4 < extractedData.length; _i4++) {
+    var _extractedData$_i4 = extractedData[_i4];
+    var selector = _extractedData$_i4.selector;
+    var attributes = _extractedData$_i4.attributes;
 
     var elements = query(selector);
     for (var j = 0; j < elements.length; j++) {

@@ -77,6 +77,16 @@ function init() {
 
 function clean() {
   if (lastRunKeys.length > 0) {
+    let currents = Object.keys(installs), needClean = false;
+    for (let k = 0; k < lastRunKeys.length; k++) {
+      if (currents.indexOf(lastRunKeys[i]) < 0) {
+        needClean = true;
+        break;
+      }
+    }
+
+    if (!needClean) return false;
+
     let elements = query('[' + lastRunKeys.join('], [') + ']');
     for (let i = 0; i < elements.length; i++) {
       for (let j = 0; j < lastRunKeys.length; j++) {
