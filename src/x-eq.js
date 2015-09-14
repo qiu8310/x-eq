@@ -161,10 +161,19 @@
     return result;
   }
 
+  function getComputedStyle(element, prop) {
+    if (element.currentStyle) {
+      return element.currentStyle[prop];
+    } else if (window.getComputedStyle) {
+      return window.getComputedStyle(element, null).getPropertyValue(prop);
+    } else {
+      return element.style[prop];
+    }
+  }
+
   function getEmSize(element) {
     if (!element) element = document.documentElement;
-    if (getComputedStyle) return parseFloat(getComputedStyle(element, 'fontSize')) || 16;
-    return 16;
+    return parseFloat(getComputedStyle(element, 'fontSize')) || 16;
   }
 
   /**
