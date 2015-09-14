@@ -28,9 +28,12 @@
       background-color: lightgreen;
       transition: all .5s;
     }
-    .inner.too-big {
+
+    .inner {
       width: 100%;
-      height: 201px;
+    }
+    .inner.too-big {
+      height: 205px;
     }
 
     .box[overflow] {
@@ -44,7 +47,7 @@
     <div class="inner too-big"></div>
   </div>
   <div class="box">
-    <div class="inner"></div>
+    <div class="inner" id="#interval"></div>
   </div>
 </div>
 
@@ -61,6 +64,12 @@
   xEQ.run();
 
 
+  // 程序修改了元素的宽高后，需要手动 refresh 下
+  var el = document.getElementById('#interval');
+  setInterval(function () {
+    el.className = el.className === 'inner' ? 'inner too-big' : 'inner';
+    xEQ.refresh();
+  }, 1200)
 
 </script>
 </body>
