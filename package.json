@@ -1,7 +1,7 @@
 {
   "name": "x-eq",
   "description": "x Element Query.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/Hujiang-FE/x-eq",
   "bugs": "https://github.com/Hujiang-FE/x-eq/issues",
   "license": "MIT",

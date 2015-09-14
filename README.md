@@ -73,9 +73,20 @@ attribute 是一个 Object，包含下面几个属性
 如果禁用了自动运行，或者有新的 key install，或有旧的 key uninstall，都需要重新 run
 
 
+## Reference
+* [media-queries-are-not-the-answer-element-query-polyfill](http://www.smashingmagazine.com/2013/06/media-queries-are-not-the-answer-element-query-polyfill/)
+* [beyond-media-queries-time-get-elemental](http://www.sitepoint.com/beyond-media-queries-time-get-elemental/)
+* [https://github.com/Snugug/eq.js](https://github.com/Snugug/eq.js)
+* [https://github.com/marcj/css-element-queries/](https://github.com/marcj/css-element-queries/)
+
+
 ### Browser CDN
 
 <!-- REPLACE_START -->
+
+[x-eq.0.1.1.min.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.1.1.min.js)
+
+[x-eq.0.1.1.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.1.1.js)
 
 [x-eq.0.1.0.min.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.1.0.min.js)
 
@@ -86,14 +97,6 @@ attribute 是一个 Object，包含下面几个属性
 [x-eq.0.0.1.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.0.1.js)
 
 <!-- REPLACE_END -->
-
-
-## Reference
-* [media-queries-are-not-the-answer-element-query-polyfill](http://www.smashingmagazine.com/2013/06/media-queries-are-not-the-answer-element-query-polyfill/)
-* [beyond-media-queries-time-get-elemental](http://www.sitepoint.com/beyond-media-queries-time-get-elemental/)
-* [https://github.com/Snugug/eq.js](https://github.com/Snugug/eq.js)
-* [https://github.com/marcj/css-element-queries/](https://github.com/marcj/css-element-queries/)
-
 
 
 ## License
