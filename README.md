@@ -42,8 +42,8 @@ div[max-width~=600px] {
 
 ## Example
 
-* [Basic](./examples/basic.html)
-* [Custom](./examples/custom.html)
+* [Basic](./examples/basic.html) [Online](http://7u2rjq.com1.z0.glb.clouddn.com/da-3d538d4ba1540ddecdeb4899367ccbe1.html)
+* [Custom](./examples/custom.html) [Online](http://7u2rjq.com1.z0.glb.clouddn.com/da-7c3027c5beb6037d6d680482cb2001eb.html)
 
 
 ## Notice
@@ -87,10 +87,6 @@ attribute 是一个 Object，包含下面几个属性
 * [https://github.com/Snugug/eq.js](https://github.com/Snugug/eq.js)
 * [https://github.com/marcj/css-element-queries/](https://github.com/marcj/css-element-queries/)
 
-
-## History
-
-[CHANGELOG](CHANGELOG.md)
 
 
 ## License
