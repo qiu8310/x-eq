@@ -2,8 +2,9 @@
 <html>
 <head>
   <title></title>
-
-  <script src="../dist/x-eq.js"></script>
+  <!-- For less and equal then ie7 -->
+  <script src="http://cdn.staticfile.org/jquery/1.11.1-rc2/jquery.js"></script>
+  <script src="../src/x-eq.js"></script>
 
   <style>
     #test {
@@ -21,6 +22,9 @@
   </style>
 </head>
 <body>
+<!--[if IE 7 ]>
+<p>Only IE 7 will see this</p>
+<![endif]-->
 <div id="test"></div>
 
 <script type="text/javascript">

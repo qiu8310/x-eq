@@ -4,7 +4,10 @@
   <title></title>
 
   <script>var noAutoRunXEQ = true;</script>
-  <script src="../dist/x-eq.js"></script>
+
+  <!-- For less and equal then ie7 -->
+  <script src="http://cdn.staticfile.org/jquery/1.11.1-rc2/jquery.js"></script>
+  <script src="../src/x-eq.js"></script>
 
   <style>
     #test {
@@ -25,12 +28,11 @@
       background-color: lightgreen;
       transition: all .5s;
     }
-    @media (max-width: 600px) {
-      .inner.too-big {
-        width: 100%;
-        height: 201px;
-      }
+    .inner.too-big {
+      width: 100%;
+      height: 201px;
     }
+
     .box[overflow] {
       background-color: darkgreen;
     }

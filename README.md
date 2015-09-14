@@ -47,6 +47,7 @@ div[max-width~=600px] {
 
 
 ## Notice
+* 因为需要用到属性选择器，所以最低支持到 IE7；另外 IE7 需要引入 jQuery 1.x.x，而且 IE7 中只能支持 px 单位，其它单位不支持
 * **跨域的 stylesheet** 不会处理，带 **`data-xeq-bypass` 属性的 stylesheet**  也不会处理
 * 如果不想要脚本自动运行（通常 install/uninstall 之前需要禁止脚本自动运行），需要要引用此脚本之前设置 `window.noAutoRunXEQ = true;`
 

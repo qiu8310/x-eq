@@ -6,12 +6,12 @@ var pkg = require('./package.json');
 
 var join = path.join.bind(path, __dirname);
 
-var content = fs.readFileSync(join('dist', 'x-eq.js'));
+var content = fs.readFileSync(join('src', 'x-eq.js'));
 
 
 fs.writeFileSync(join('dist', 'x-eq.' + pkg.version + '.js'), content);
 
 fs.writeFileSync(
   join('dist', 'x-eq.' + pkg.version + '.min.js'),
-  Uglify.minify(join('dist', 'x-eq.js')).code
+  Uglify.minify(join('src', 'x-eq.js')).code
 );
