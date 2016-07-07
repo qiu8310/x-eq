@@ -84,17 +84,17 @@ attribute 是一个 Object，包含下面几个属性
 
 <!-- REPLACE_START -->
 
-[x-eq.0.1.1.min.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.1.1.min.js)
+[x-eq.0.1.1.min.js](http://7rylsh.com1.z0.glb.clouddn.com/libs/x-eq.0.1.1.min.js)
 
-[x-eq.0.1.1.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.1.1.js)
+[x-eq.0.1.1.js](http://7rylsh.com1.z0.glb.clouddn.com/libs/x-eq.0.1.1.js)
 
-[x-eq.0.1.0.min.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.1.0.min.js)
+[x-eq.0.1.0.min.js](http://7rylsh.com1.z0.glb.clouddn.com/libs/x-eq.0.1.0.min.js)
 
-[x-eq.0.1.0.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.1.0.js)
+[x-eq.0.1.0.js](http://7rylsh.com1.z0.glb.clouddn.com/libs/x-eq.0.1.0.js)
 
-[x-eq.0.0.1.min.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.0.1.min.js)
+[x-eq.0.0.1.min.js](http://7rylsh.com1.z0.glb.clouddn.com/libs/x-eq.0.0.1.min.js)
 
-[x-eq.0.0.1.js](http://7rylsh.com1.z0.glb.clouddn.com/x-eq.0.0.1.js)
+[x-eq.0.0.1.js](http://7rylsh.com1.z0.glb.clouddn.com/libs/x-eq.0.0.1.js)
 
 <!-- REPLACE_END -->
 
