@@ -379,8 +379,12 @@
   install('max-height', function (element, attribute) { return element.offsetHeight <= attribute.numberValue; });
 
 
-  if (window.addEventListener) window.addEventListener('resize', refresh, false);
-  else window.attachEvent('onresize', refresh);
+  if (window.addEventListener) {
+    window.addEventListener('resize', refresh, false);
+    window.addEventListener('pageshow', function(e) { if (e.persisted) refresh() }, false);
+  } else {
+    window.attachEvent('onresize', refresh);
+  }
 
   function autoRun() {
     if (window.addEventListener) {
